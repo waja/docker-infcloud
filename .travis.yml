@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: c
+
+env:
+  global:
+    - INFCLOUD_EXPORT_PATH="/srv/docker/infcloud"
+
+services:
+  - docker
+
+install:
+  - docker build -t waja/infcloud .
+  - docker run -d -v -p 80:80 --name infcloud waja/infcloud
+
+script:
+  - docker ps | grep -q lighttpd
