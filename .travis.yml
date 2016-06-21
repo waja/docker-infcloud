@@ -11,7 +11,7 @@ services:
 
 install:
   - docker build -t waja/infcloud .
-  - docker run -d -v -p 80:80 --name infcloud waja/infcloud
+  - docker run -d -p 80:80 --name infcloud waja/infcloud
 
 script:
   - docker ps | grep -q lighttpd
