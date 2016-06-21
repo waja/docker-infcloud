@@ -16,9 +16,6 @@ RUN apk --no-cache add unzip wget ca-certificates lighttpd \
     && chmod +x /usr/local/bin/infcloud \
     && apk del -rf --purge unzip wget ca-certificates
 
-ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
-ADD baikal.sh /usr/local/bin/baikal
-
 VOLUME /srv/infcloud/config.js
 
 EXPOSE 80
