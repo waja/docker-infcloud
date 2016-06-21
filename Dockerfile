@@ -16,8 +16,6 @@ RUN apk --no-cache add unzip wget ca-certificates lighttpd \
     && chmod +x /usr/local/bin/infcloud \
     && apk del -rf --purge unzip wget ca-certificates
 
-VOLUME /srv/infcloud/config.js
-
 EXPOSE 80
 
 ENTRYPOINT ["infcloud"]
