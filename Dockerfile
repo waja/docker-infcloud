@@ -12,7 +12,10 @@ RUN apk --no-cache add unzip wget ca-certificates lighttpd \
     && wget  https://www.inf-it.com/InfCloud_$VERSION.zip \
     && unzip InfCloud_*.zip -d /srv/ \
     && rm InfCloud_*.zip \
-    && cp -a /srv/infcloud/config.js /srv/infcloud/config.js.orig \
+    && mkdir -p /srv/infcloud/config \
+    && cp /srv/infcloud/config.js /srv/infcloud/config/config.js \
+    && mv /srv/infcloud/config.js /srv/infcloud/config.js.orig \
+    && ln -s /srv/infcloud/config/config.js /srv/infcloud/config.js \
     && chmod +x /usr/local/bin/infcloud \
     && apk del -rf --purge unzip wget ca-certificates
 
