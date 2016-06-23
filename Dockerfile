@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.4
 
 # Dockerfile Maintainer
 MAINTAINER Jan Wagner "waja@cyconet.org"
