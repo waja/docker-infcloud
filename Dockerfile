@@ -5,10 +5,11 @@ MAINTAINER Jan Wagner "waja@cyconet.org"
 
 ENV VERSION  0.13.1
 
-ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
+ADD lighttpd.conf /tmp/lighttpd.conf
 ADD infcloud.sh /usr/local/bin/infcloud
 
 RUN apk --no-cache add unzip wget ca-certificates lighttpd \
+    && mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.apk-new \
     && wget  https://www.inf-it.com/InfCloud_$VERSION.zip \
     && unzip InfCloud_*.zip -d /srv/ \
     && rm InfCloud_*.zip \
