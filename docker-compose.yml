@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+
+  infcloud:
+    image: waja/infcloud
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - ./config/:/srv/infcloud/config/
