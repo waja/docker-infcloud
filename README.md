@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Cyconet/docker-infcloud.svg?branch=development)](https://travis-ci.org/Cyconet/docker-infcloud)
 [![Docker Build Status](https://img.shields.io/docker/build/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
-[![GitHub tag](https://img.shields.io/github/tag/Cyconet/infcloud.svg)](https://github.com/Cyconet/infcloud/tags)
+[![GitHub tag](https://img.shields.io/github/tag/Cyconet/docker-infcloud.svg)](https://github.com/Cyconet/docker-infcloud/tags)
 [![](https://img.shields.io/docker/pulls/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
 [![](https://img.shields.io/docker/stars/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
 [![](https://img.shields.io/docker/automated/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
