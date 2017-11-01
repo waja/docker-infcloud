@@ -10,8 +10,8 @@ services:
   - docker
 
 install:
-  - docker build -t waja/infcloud .
+  - make build
   - docker run -d -p 80:80 --name infcloud waja/infcloud
 
 script:
-  - docker ps | grep -q infcloud
+  - make test
