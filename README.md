@@ -1,5 +1,7 @@
 # Docker-InfCloud
 
+[![](https://images.microbadger.com/badges/version/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
+[![](https://images.microbadger.com/badges/image/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
 [![Build Status](https://travis-ci.org/Cyconet/docker-infcloud.svg?branch=development)](https://travis-ci.org/Cyconet/docker-infcloud)
 [![Docker Build Status](https://img.shields.io/docker/build/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
 [![GitHub tag](https://img.shields.io/github/tag/Cyconet/docker-infcloud.svg)](https://github.com/Cyconet/docker-infcloud/tags)
