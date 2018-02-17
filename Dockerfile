@@ -3,6 +3,23 @@ FROM alpine:3.7
 # Dockerfile Maintainer
 MAINTAINER Jan Wagner "waja@cyconet.org"
 
+ARG "BUILD_DATE=unknown"
+ARG "BUILD_VERSION=unknown"
+ARG "VCS_URL=unknown"
+ARG "VCS_REF=unknown"
+ARG "VCS_BRANCH=unknown"
+
+# See http://label-schema.org/rc1/ and https://microbadger.com/labels
+LABEL org.label-schema.name="infcloud - CalDAV/CardDAV web client implementation" \
+    org.label-schema.description="CalDAV/CardDAV web client implementation on Alpine Linux based container" \
+    org.label-schema.vendor="Cyconet" \
+    org.label-schema.schema-version="1.0" \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.version=$BUILD_VERSION \
+    org.label-schema.vcs-url=$VCS_URL \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.vcs-branch=$VCS_BRANCH
+
 ENV VERSION  0.13.1
 
 ADD lighttpd.conf /tmp/lighttpd.conf
