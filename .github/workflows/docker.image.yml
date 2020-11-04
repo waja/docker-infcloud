@@ -1,0 +1,42 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: 
+      - $default-branch
+      - development
+      - master
+  # Run tests for any PRs
+  pull_request:
+
+env:
+  IMAGE_NAME: infcloud
+
+jobs:
+  lint-docker-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: lint zammad dockerfile
+      uses: brpaz/hadolint-action@master
+      with:
+        dockerfile: Dockerfile
+  build:
+    needs:
+      - lint-docker-file
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run:  docker build . --file Dockerfile --build-arg BUILD_DATE="$(date -u +'%Y-%m-%dT%H:%M:%SZ')" --tag ${IMAGE_NAME}
+    - name: Compose up
+      run: docker-compose -f .github/workflows/docker-compose.yml up -d
+    - name: Check running containers
+      run: docker ps -a
+    - name: Check logs
+      run: docker-compose -f docker-compose.yml logs
+    - name: Test the Docker image
+      run: if ! [ "$(docker ps -a | grep "${IMAGE_NAME}" | head -1 | grep -c ${IMAGE_NAME})" = "1" ]; then exit 1; fi  
+    - name: Compose down
+      run: docker-compose -f docker-compose.yml down
