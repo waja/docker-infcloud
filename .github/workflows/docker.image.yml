@@ -35,8 +35,8 @@ jobs:
     - name: Check running containers
       run: docker ps -a
     - name: Check logs
-      run: docker-compose -f docker-compose.yml logs
+      run: docker-compose -f .github/workflows/docker-compose.yml logs
     - name: Test the Docker image
       run: if ! [ "$(docker ps -a | grep "${IMAGE_NAME}" | head -1 | grep -c ${IMAGE_NAME})" = "1" ]; then exit 1; fi  
     - name: Compose down
-      run: docker-compose -f docker-compose.yml down
+      run: docker-compose -f .github/workflows/docker-compose.yml down
