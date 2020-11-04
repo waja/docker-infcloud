@@ -19,10 +19,11 @@ LABEL org.label-schema.name="infcloud - CalDAV/CardDAV web client implementation
 
 ENV VERSION  0.13.1
 
-ADD lighttpd.conf /tmp/lighttpd.conf
-ADD cache_update.sh /usr/local/bin/cache_update
-ADD infcloud.sh /usr/local/bin/infcloud
+COPY lighttpd.conf /tmp/lighttpd.conf
+COPY cache_update.sh /usr/local/bin/cache_update
+COPY infcloud.sh /usr/local/bin/infcloud
 
+# hadolint ignore=DL3017,DL3018
 RUN apk --no-cache update && apk --no-cache upgrade \
     && apk --no-cache add unzip wget ca-certificates lighttpd \
     && mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.apk-new \
