@@ -15,7 +15,8 @@ LABEL org.label-schema.name="infcloud - CalDAV/CardDAV web client implementation
     org.label-schema.version="${BUILD_VERSION:-unknown}" \
     org.label-schema.vcs-url="${VCS_URL:-unknown}" \
     org.label-schema.vcs-ref="${VCS_REF:-unknown}" \
-    org.label-schema.vcs-branch="${VCS_BRANCH:-unknown}"
+    org.label-schema.vcs-branch="${VCS_BRANCH:-unknown}" \
+    org.opencontainers.image.source="https://github.com/waja/docker-infcloud"
 
 ENV VERSION  0.13.1
 
