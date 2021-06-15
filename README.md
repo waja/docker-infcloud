@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD045 -->
 # Docker-InfCloud
 
 [![](https://images.microbadger.com/badges/version/waja/infcloud.svg)](https://hub.docker.com/r/waja/infcloud/)
@@ -11,26 +12,23 @@
 
 Builds a docker image with the [infcloud](https://www.inf-it.com/open-source/clients/infcloud/) ready to run.
 
-Running
--------
+# Running
 
 - run the docker container with:
 
-```
+```bash
 docker-compose pull
 docker-compose up
 ```
 
-Building
---------
+# Building
 
-```
+```bash
 make build
 ```
 
-Get a shell in a running container
-----------------------------------
+# Get a shell in a running container
 
-```
+```bash
 make shell
 ```
